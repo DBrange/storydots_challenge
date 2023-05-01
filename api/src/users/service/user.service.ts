@@ -35,7 +35,7 @@ export class UserService {
   async findUserById(id: string): Promise<UserEntity> {
     try {
       const user: UserEntity = await this.userRepository.findOneBy({ id });
-      console.log(user, 'ccccccccc');
+
       if (!user) {
         throw new ErrorManager({
           type: 'BAD_REQUEST',
