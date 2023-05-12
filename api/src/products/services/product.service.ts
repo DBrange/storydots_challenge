@@ -15,7 +15,7 @@ export class ProductService {
 
   async findAllProducts(): Promise<ProductEntity[]> {
     try {
-      const products: ProductEntity[] = await this.productRepository.find();
+      const products: ProductEntity[] = await this.productRepository.createQueryBuilder('product').leftJoinAndSelect('product.brand', 'brand').getMany()
 
       if (!products.length) {
         throw new ErrorManager({
@@ -52,7 +52,6 @@ export class ProductService {
   }
 
   async findProductByName(name: string): Promise<ProductEntity[]> {
-    console.log(name, 'vvvvvvvvvvvvv')
     try {
       const product: ProductEntity[] = await this.productRepository
         .createQueryBuilder('product')

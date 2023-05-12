@@ -56,6 +56,13 @@ export class UserService {
         .where({ [key]: value })
         .getOne();
 
+      // if (!user) {
+      //   throw new ErrorManager({
+      //     type: 'BAD_REQUEST',
+      //     message: 'No user found for login',
+      //   });
+      // }
+
       return user;
     } catch (err) {
       throw ErrorManager.createAsignaturError(err.message);

@@ -34,7 +34,7 @@ export class AuthService {
     return jwt.sign(payload, secret, { expiresIn: expires });
   }
 
-  public async generateJWY(user: UserEntity): Promise<any>{
+  public async generateJWT(user: UserEntity): Promise<any>{
     const getUser = await this.userService.findUserById(user.id)
 
     const payload: PayloadToken = {
