@@ -79,3 +79,21 @@ Vale tambien mencionar, que las rutas son protegidas en caso de no estar loguead
 - Paginado/scroll infinito
 - Registro
 
+---
+## Aclaraciones
+
+- Si desea hacer login, la contraseña es 'didier' y el username es 'didi' o 'didier@gmail.com'
+- Para poder levantar la base d datos con docker, recomiendo ubicarse dentro de la carpeta 'api' en terminal y pegar el siguiente codigo para el fun
+```
+docker compose up -d
+```
+- Para levantar el servidor
+```
+npm run start:dev
+```
+
+- Para levantar la web
+```
+npm run dev
+```
+
